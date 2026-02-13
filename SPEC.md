@@ -238,6 +238,18 @@ See [docs/best-practices.md](docs/best-practices.md) for writing guidelines.
 - **[MCP Server](docs/integration-mcp.md)** — Specify MCP tool contracts
 - **[AI Tool Setup](docs/using-skills-with-other-tools.md)** — Claude, Cursor, Aider, Copilot, etc.
 
+## Contributing
+
+RUNE is an open standard. Contributions welcome:
+
+- **Example specs** — Submit `.rune` files or Markdown specs for common use cases
+- **Tooling** — Build linters, validators, IDE extensions, or CI integrations
+- **Integration guides** — Document how RUNE works with your AI tool or workflow
+- **Language templates** — Add templates for languages not yet covered
+- **Bug reports & improvements** — Open an issue or submit a PR
+
+All contributions should follow the spec fields and validation rules defined above.
+
 ## Version History
 
 - **v1.1** (2026-02-13): Dual format support (YAML + Markdown), pattern-first positioning

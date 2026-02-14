@@ -179,7 +179,7 @@ function calculate_discount(price: float, percentage: int) -> float
 
 ### INTENT (required)
 
-1-3 sentences. Must be clear enough to serve as a docstring. Describes the "what", not the "how".
+1-3 sentences describing the function's purpose — the "what", not the "how". Write it as a technical summary that works as a docstring but is understandable by non-developers reviewing the spec. Avoid implementation details (algorithms, regex patterns, library calls).
 
 ### BEHAVIOR (required)
 
@@ -203,9 +203,41 @@ Minimum 3 test cases covering:
 
 Format: `function(input) == expected` or `function(invalid) raises ErrorType`
 
+Tests are written as **pseudo-assertions**, not executable code. They define the expected behavior concisely:
+
+```yaml
+TESTS:
+  # Inline values for simple inputs:
+  - "calculate_discount(100.0, 20) == 80.0"
+
+  # [...] means "a representative list matching the spec's CONSTRAINTS":
+  - "validate_coupon('SAVE10', [...], '2025-01-15')[0] == True"
+  # Here [...] is shorthand for a valid coupons list. The developer
+  # expands it into real test data when writing pytest/Jest tests.
+
+  # "raises" means the function should throw that exception:
+  - "calculate_discount(-10.0, 20) raises ValueError"
+```
+
+When converting to real tests, expand `[...]` into concrete test fixtures that satisfy the CONSTRAINTS section.
+
 ### CONSTRAINTS (optional)
 
-Input validation rules. Each constraint maps to a validation check in the implementation.
+Input preconditions — what must be true about the inputs before the function runs. Each constraint maps to a validation check in the implementation.
+
+CONSTRAINTS and BEHAVIOR are complementary: CONSTRAINTS declare *what* is valid, BEHAVIOR defines *what to do* when inputs violate those constraints.
+
+```yaml
+# CONSTRAINTS declare the precondition:
+CONSTRAINTS:
+  - "price: must be non-negative float"
+
+# BEHAVIOR defines the action when violated:
+BEHAVIOR:
+  - WHEN price < 0 THEN raise ValueError("Price cannot be negative")
+```
+
+If a constraint has no corresponding BEHAVIOR rule, it is assumed to be a precondition that callers must satisfy (no runtime validation).
 
 ### EDGE_CASES (optional)
 
@@ -252,8 +284,7 @@ All contributions should follow the spec fields and validation rules defined abo
 
 ## Version History
 
-- **v1.1** (2026-02-13): Dual format support (YAML + Markdown), pattern-first positioning
-- **v1.0** (2025): Initial YAML-only specification
+- **v1.1**: Dual format support (YAML + Markdown), pattern-first positioning
 
 ## License
 

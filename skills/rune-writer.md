@@ -6,13 +6,13 @@ Upload this file to any AI tool (Claude Projects, Cursor, Aider, ChatGPT, Copilo
 
 ## What is RUNE
 
-RUNE is a specification pattern for defining function behavior before implementation. It ensures any AI coding tool generates consistent, tested code from the same contract.
+RUNE is a specification pattern for defining function behavior before implementation. It ensures any AI coding tool generates code with consistent behavior from the same contract. Internal details (variable names, code style) may vary, but the function's inputs, outputs, and edge case handling remain the same.
 
-RUNE is NOT a file format — it's a discipline. The pattern can be written in:
-- **YAML** as standalone `.rune` files
+RUNE is a pattern, not a file format. The same structure can be written in:
+- **YAML** as standalone `.rune` files (formal, parseable)
 - **Markdown** as sections inside AGENTS.md, README.md, or any .md file
 
-The value is in the structure (WHEN/THEN rules, mandatory tests, explicit edge cases), not in the container.
+The value is in the structure (WHEN/THEN rules, mandatory tests, explicit edge cases), not in the container. Both formats produce code with the same behavior.
 
 ---
 

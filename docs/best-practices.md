@@ -391,7 +391,7 @@ CONSTRAINTS:
 
 ### Write Intent for Humans
 
-INTENT should be clear to non-developers:
+INTENT should be a technical summary that works as a docstring, but avoids implementation details. Write for someone who needs to understand *what* the function does, not *how* it does it:
 
 ```yaml
 ✅ Good (clear):

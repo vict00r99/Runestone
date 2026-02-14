@@ -111,7 +111,7 @@ def validate_coupon(code, active_coupons, current_date):
     return (True, match)
 ```
 
-Same function name. Same signature. Same return type. Same behavior. Same edge cases handled. Tests included.
+Same function name. Same signature. Same return type. Same behavior. Same edge cases handled. Tests included. Internal details (variable names, code style) may vary between AI tools, but the contract is the same: same inputs produce the same outputs.
 
 ---
 

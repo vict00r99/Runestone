@@ -377,7 +377,6 @@ RUNE: code_quality_checker
 
 ## Resources
 
-- [agents.md specification](https://github.com/e2b-dev/agent-protocol)
 - [Example multi-agent system](../examples/integrations/agents-md-example/)
 - [RUNE templates](../templates/)
 

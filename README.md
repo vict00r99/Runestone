@@ -2,7 +2,7 @@
 
 **A specification pattern for consistent AI code generation.**
 
-Define function behavior once. Any AI tool generates the same consistent, tested implementation — every time, every developer, every language.
+Define function behavior once. Any AI tool generates consistent, tested code with the same behavior — every time, every developer, every language.
 
 ---
 
@@ -21,7 +21,7 @@ Requirements  ──▶  RUNE specs  ──▶  Code + Tests
  (Analyst)       (Analyst + AI)   (Developer + AI)
 ```
 
-RUNE is not a file format — it's a discipline. Write specs as **YAML files** or as **Markdown sections** inside AGENTS.md. The pattern is the same either way.
+RUNE is a pattern, not a file format. The same structure (SIGNATURE, BEHAVIOR, TESTS...) can be written as **YAML `.rune` files** for formal specs or as **Markdown sections** inside AGENTS.md. The container changes, the contract doesn't.
 
 ## Quick Example
 
@@ -67,7 +67,7 @@ TESTS:
 - `validate_coupon('', [], '2025-01-15')[0] == False`
 ```
 
-Same pattern, different container. The AI generates the same implementation from both.
+Same pattern, different container. The AI generates code with the same behavior from both.
 
 ## How It Works with AGENTS.md
 
